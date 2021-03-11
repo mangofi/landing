@@ -1,38 +1,148 @@
-.App {
-  text-align: center;
+html, body, #app, #app>div {
+  height: 100%
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body > #root > div {
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body { margin: 0px; }
+
+@font-face {
+    font-family: 'Circular Std';
+    src: local('Circular Std Black'), local('Circular-Std-Black'),
+        url('fonts/CircularStd-Black.woff2') format('woff2'),
+        url('fonts/CircularStd-Black.woff') format('woff'),
+        url('fonts/CircularStd-Black.ttf') format('truetype');
+    font-style: normal;
   }
+
+path,p {
+  color: #C34A09;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contenedor {
+  justify-content: flex-start;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.bg-image {
+  background-image: url("img/bG.svg");
+  background-color: #FFC600;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container-text {
+  margin-left:84px;
+  margin-top:245px;
+  max-width: 568px;
+  font-family: 'Circular Std';
+}
+
+.mango-text {
+  color: #670000;
+  font-size:84px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #FF6600 !important;
+    border-color: #FF6600 !important;
+}
+
+.col-xl-9, .col-sm-9 {
+  padding-left: 0px !important;
+}
+
+.mangoLogo{
+  bottom:-110px;
+  right:-100px;
+  position:fixed;
+  transform-origin: bottom;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  height: 1261px;
+}
+
+.row {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
+.box {
+    align-self: flex-end;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-color: #F44336;
+    height: 200px;
+    margin: 0 auto 0 auto;
+    transform-origin: bottom;
+    width: 200px;
+}
+.bounce {
+    animation-name: bounce-big;
+    animation-timing-function: ease;
+}
+@keyframes bounce-big {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-100px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
+
+@keyframes bounce-mobile {
+    0%   { transform: scale(1,1)    translateY(0); }
+    10%  { transform: scale(1.1,.9) translateY(0); }
+    30%  { transform: scale(.9,1.1) translateY(-15px); }
+    50%  { transform: scale(1,1)    translateY(0); }
+    100% { transform: scale(1,1)    translateY(0); }
+}
+
+@media only screen and (max-width: 740px) {
+  .container-text {
+    margin-left:24px;
+    margin-top:34px;
+    max-width: 327px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .mango-text {
+    font-size:40px;
+  }
+
+  .mangoLogo {
+    height: auto;
+    bottom:-16px;
+    right:-15px;
+  }
+
+  .bounce {
+      animation-name: bounce-mobile;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .container-text {
+    margin:auto;
+    margin-top:34px;
+  }
+
+  .mango-text {
+    font-size:40px;
+  }
+
+  .btnSubmit{
+    margin-top: 6px;
+      width: 100%;
+  }
+
+  div {
+    align-content: center !important;
+    text-align: center !important;
   }
 }
