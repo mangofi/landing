@@ -163,10 +163,6 @@ path,p {
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  
-}
-
 @media only screen and (min-width: 1280px) {
   .content {
     padding-left: 70px;
@@ -177,7 +173,14 @@ path,p {
   }
   
   .mango-logo-sm {
-    height: 1000px;
+    height: 920px;
+    right: -60px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .mango-logo-sm {
+    height: 1100px;
     right: -60px;
   }
 }
