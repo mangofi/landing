@@ -1,17 +1,11 @@
 import React from "react"
 
-
-function MangoLogo(props){
-console.log(props.ancho);
-  var imgsource = "img/mango logo.svg";
-  if(props.ancho < 741 ){
-    imgsource = "img/mango logo_mobile.svg";
-  }
-
+function MangoLogo(){
   return (
-    <div>
-      <img className="mangoLogo bounce" src={imgsource}></img>
-    </div>
+    <>
+      <img className="mango-logo d-md-none" src="img/mango logo_mobile.svg"></img>
+      <img className="mango-logo mango-logo-sm bounce d-none d-sm-block" src="img/mango logo.svg"></img>
+    </>
 	)
 }
 

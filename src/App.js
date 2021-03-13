@@ -1,89 +1,78 @@
-import './App.css';
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom";
 
-import React from "react"
-import ReactDOM from "react-dom"
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import Icons from "./components/Icons";
+import MangoLogo  from "./components/MangoLogo";
 
-import Icons from './components/Icons';
-import MangoLogo from './components/MangoLogo';
+import Api from "./lib/api";
 
-class App extends React.Component{
-	constructor(){
-		super()
-		this.state = {
-			windowWidth: window.innerWidth
-		}
-	}
+const App = () => {
+  const [loading, setLoading] = useState(false);
+  const [registered, setRegistered] = useState(false);
+  
+  const onMailSubmit = async e => {
+    e.preventDefault();
+    setLoading(true)
+    const email = document.getElementById("email").value;
 
-	handleResize = (e) => {
-	  this.setState({ windowWidth: window.innerWidth });
-	 };
+    await Api.emailSignup(email);
 
-	 componentDidMount() {
-	  window.addEventListener("resize", this.handleResize);
-	 }
+    setLoading(() => {
+      setRegistered(false)
 
-	 componentWillUnmount() {
-	  window.addEventListener("resize", this.handleResize);
-	 }
+      return false
+    })
+  };
+  
+  const thankYouMessage = (
+    <div>
+      <p className="thank-you-text">Thank you for subscribing!</p>
+      <p className="thank-you-text">We’ll notify you when we launch</p>
+      <p className="more-info-text">
+        In the meanwhile, you can connect with us below
+      </p>
+    </div>
+  )
 
-	render(){
-		const { windowWidth } = this.state;
-		var inputs;
-		if(this.state.windowWidth > 375){
-			inputs = <Row><Col xl={9} sm={9}>
-						<div id="mc_embed_signup_scroll">
-					<Form.Control type="email" placeholder="Enter email address" />
-						<div style={{position: "absolute", left: "-5000px", ariaHidden:"true"}}><input type="text" name="b_5f5408702a5f96c16cee493c4_6c532d6299" tabindex="-1" value=""/></div>
-						</div>
+  return (
+    <div className="bg-image">
+      <div className="content">
+        <h1 className="main-title text-center p-sm-3 text-sm-left">The new flavor of DeFi</h1>
+        <form className="p-3" onSubmit={onMailSubmit}>
+          {registered ? thankYouMessage : (
+            <>
+              <div className="row">
+                <div className="col">
+                  <h2 className="subtitle text-sm-left">Sign up for early access and launch updates</h2>
+                </div>
+              </div>
+              <div className="row email-wrapper no-gutters">
+                <div className="col email-container">
+                  <input className="form-control email-input mt-3" id="email" disabled={loading} type="email" placeholder="Enter email address" />
+                  <button className="btn btn-primary btn-block btn-submit mt-3 px-3 d-sm-none" disabled={loading}>
+                    Notify me
+                  </button>
+                </div>
+                <div className="col d-none d-sm-inline-block">
+                  <button className="btn btn-primary btn-submit mt-3 px-5 ml-2" disabled={loading}>
+                    Notify me
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+          <Icons />
+        </form>
+      </div>
+      <MangoLogo />
+    </div>
+  )
+};
 
-			</Col>
-			<Col xl={3} sm={3}>
-			<div class="clear"><input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary"/></div>
-
-			</Col>
-
-		</Row>
-	}else{
-		inputs = <><Row><Col xs={12}>
-							<div id="mc_embed_signup_scroll">
-						<Form.Control type="email" placeholder="Enter email address" />
-							<div style={{position: "absolute", left: "-5000px", ariaHidden:"true"}}><input type="text" name="b_5f5408702a5f96c16cee493c4_6c532d6299" tabindex="-1" value=""/></div>
-							</div>
-				</Col>
-				</Row>
-				<Row>
-					<Col xs={12}>
-						<div class="clear"><input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btnSubmit"/></div>
-					</Col>
-				</Row></>
-	}
-
-		return (
-			<div class="bg-image">
-          <div class="contenedor">
-            <div className="container-text">
-              <Row>
-              <h1 class="mango-text">The new flavor of DeFi</h1>
-              </Row>
-              <Row>
-              <p>Sign up for early access and launch updates</p>
-              </Row>
-              <Form action="https://mangofi.us1.list-manage.com/subscribe/post?u=5f5408702a5f96c16cee493c4&amp;id=6c532d6299" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-							{inputs}
-							</Form>
-              <Icons ancho={this.state.windowWidth}/>
-            </div>
-						<MangoLogo ancho={this.state.windowWidth}/>
-          </div>
-        </div>
-		)
-	}
-}
-
-export default App
+export default App;
