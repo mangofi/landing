@@ -176,11 +176,8 @@ path,p {
     padding-top: 0;
   }
   
-  .bg-image {
-    background-size: 100%;
-  }
-  
   .mango-logo-sm {
-    height: auto;
+    height: 1000px;
+    right: -60px;
   }
 }
