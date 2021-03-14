@@ -24,7 +24,7 @@ const App = () => {
     await Api.emailSignup(email);
 
     setLoading(() => {
-      setRegistered(false)
+      setRegistered(true)
 
       return false
     })
