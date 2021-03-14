@@ -43,30 +43,32 @@ const App = () => {
   return (
     <div className="bg-image">
       <div className="content">
-        <h1 className="main-title text-center p-sm-3 text-sm-left">The new flavor of DeFi</h1>
-        <form className="p-3" onSubmit={onMailSubmit}>
-          {registered ? thankYouMessage : (
-            <>
-              <div className="row">
-                <div className="col">
-                  <h2 className="subtitle text-sm-left">Sign up for early access and launch updates</h2>
+        <h1 className="main-title text-center text-sm-left">The new flavor of DeFi</h1>
+        <form onSubmit={onMailSubmit}>
+          <div className="form-content">
+            {registered ? thankYouMessage : (
+              <>
+                <div className="row">
+                  <div className="col">
+                    <h2 className="subtitle text-sm-left">Sign up for early access and launch updates</h2>
+                  </div>
                 </div>
-              </div>
-              <div className="row email-wrapper no-gutters">
-                <div className="col email-container">
-                  <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" />
-                  <button className="btn btn-primary btn-block btn-submit mt-3 px-3 d-sm-none" disabled={loading}>
-                    Notify me
-                  </button>
+                <div className="row email-wrapper no-gutters">
+                  <div className="col email-container">
+                    <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" />
+                    <button className="btn btn-primary btn-block btn-submit px-3 d-sm-none" disabled={loading}>
+                      Notify me
+                    </button>
+                  </div>
+                  <div className="col d-none d-sm-inline-block">
+                    <button className="btn btn-primary btn-submit px-5 ml-2" disabled={loading}>
+                      Notify me
+                    </button>
+                  </div>
                 </div>
-                <div className="col d-none d-sm-inline-block">
-                  <button className="btn btn-primary btn-submit px-5 ml-2" disabled={loading}>
-                    Notify me
-                  </button>
-                </div>
-              </div>
-            </>
-          )}
+              </>
+            )}
+          </div>
           <Icons />
         </form>
       </div>

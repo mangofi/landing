@@ -48,6 +48,11 @@ path,p {
   font-size: 16px;
   font-weight: 500;
   font-style: normal;
+  margin-bottom: 12px;
+}
+
+.form-content {
+  margin-top: 17px;
 }
 
 .email-input {
@@ -66,6 +71,7 @@ path,p {
   height: 54px;
   letter-spacing: 0px;
   margin-bottom: 0px;
+  margin-top: 12px;
   max-width: 600px;
 }
 
@@ -98,7 +104,7 @@ path,p {
 }
 
 .social-icon {
-  margin-right: 16px;
+  margin-right: 24px;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
@@ -146,7 +152,7 @@ path,p {
 
 @media only screen and (min-width: 576px) {
   .content {
-    padding: 39px;
+    padding: 24px;
   }
 
   .email-wrapper {
@@ -160,19 +166,20 @@ path,p {
   
   .main-title {
     font-size: 84px;
+    margin-top: 34px;
     max-width: 700px;
   }
   
-  .subtitle {
-    margin-bottom: 10px;
+  .form-content {
+    margin-bottom: 20px;
   }
   
   .social-icons {
     justify-content: flex-start;
   }
   
-  .social-icon {
-    margin-right: 24px;
+  .btn-submit {
+    margin-top: 0;
   }
 }
 
@@ -183,6 +190,10 @@ path,p {
     flex-direction: column;
     justify-content: center;
     padding-top: 0;
+  }
+  
+  .main-title {
+    margin-top: 0;
   }
   
   .mango-logo-sm {
