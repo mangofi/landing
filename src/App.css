@@ -24,7 +24,6 @@ body {
 
 path,p {
   color: #C34A09;
-
 }
 
 .content {
@@ -65,6 +64,9 @@ path,p {
 
 .btn-submit {
   height: 54px;
+  letter-spacing: 0px;
+  margin-bottom: 0px;
+  max-width: 600px;
 }
 
 .bg-image {
@@ -91,8 +93,12 @@ path,p {
   font-weight: 450;
 }
 
-.icons {
+.social-icons {
   justify-content: center;
+}
+
+.social-icon {
+  margin-right: 16px;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
@@ -157,8 +163,12 @@ path,p {
     max-width: 700px;
   }
   
-  .icons {
+  .social-icons {
     justify-content: flex-start;
+  }
+  
+  .social-icon {
+    margin-right: 24px;
   }
 }
 

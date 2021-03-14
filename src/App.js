@@ -54,13 +54,13 @@ const App = () => {
               </div>
               <div className="row email-wrapper no-gutters">
                 <div className="col email-container">
-                  <input className="form-control email-input mt-3" id="email" disabled={loading} type="email" placeholder="Enter email address" />
+                  <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" />
                   <button className="btn btn-primary btn-block btn-submit mt-3 px-3 d-sm-none" disabled={loading}>
                     Notify me
                   </button>
                 </div>
                 <div className="col d-none d-sm-inline-block">
-                  <button className="btn btn-primary btn-submit mt-3 px-5 ml-2" disabled={loading}>
+                  <button className="btn btn-primary btn-submit px-5 ml-2" disabled={loading}>
                     Notify me
                   </button>
                 </div>

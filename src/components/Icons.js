@@ -9,18 +9,18 @@ library.add(fab);
 
 const Icons = () => {
   return (
-    <div className="icons d-flex" style={{ marginTop: "14px" }}>
-      <span className="mr-4">
+    <div className="social-icons d-flex" style={{ marginTop: "14px" }}>
+      <span className="social-icon">
         <a href="https://t.me/mango_fi" target="_blank">
           <FontAwesomeIcon icon={["fab", "telegram-plane"]} size="2x" />
         </a>
       </span>
-      <span className="mr-4">
+      <span className="social-icon">
         <a href="https://twitter.com/fi_mango" target="_blank">
           <FontAwesomeIcon icon={["fab", "twitter"]} size="2x" />
         </a>
       </span>
-      <span className="mr-4">
+      <span className="social-icon">
         <a href="#">
           <FontAwesomeIcon icon={["fab", "medium"]} size="2x" />
         </a>
