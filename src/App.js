@@ -55,7 +55,7 @@ const App = () => {
                 </div>
                 <div className="row email-wrapper no-gutters">
                   <div className="col email-container">
-                    <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" />
+                    <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" autoFocus={true} />
                     <button className="btn btn-primary btn-block btn-submit px-3 d-sm-none" disabled={loading}>
                       Notify me
                     </button>
