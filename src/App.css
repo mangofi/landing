@@ -113,13 +113,13 @@ path,p {
 }
 
 .mango-logo{
-  bottom: 0;
-  right: 0;
+  bottom: -270px;
+  right: -100px;
   position: fixed;
   transform-origin: bottom;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  height: auto;
+  height: 600px;
   z-index: 0;
 }
 
