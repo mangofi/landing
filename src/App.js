@@ -31,7 +31,7 @@ const App = () => {
   };
   
   const thankYouMessage = (
-    <div>
+    <div className="mb-5">
       <p className="thank-you-text">Thank you for subscribing!</p>
       <p className="thank-you-text">We’ll notify you when we launch</p>
       <p className="more-info-text">

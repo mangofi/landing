@@ -163,6 +163,10 @@ path,p {
     max-width: 700px;
   }
   
+  .subtitle {
+    margin-bottom: 10px;
+  }
+  
   .social-icons {
     justify-content: flex-start;
   }
