@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Circular Std';
+  src: local('Circular Std Black'), local('Circular-Std-Black'),
+  url('fonts/CircularStd-Black.woff2') format('woff2'),
+  url('fonts/CircularStd-Black.woff') format('woff'),
+  url('fonts/CircularStd-Black.ttf') format('truetype');
+  font-style: normal;
+}
+
 html, body, #app, #app>div {
   height: 100%
 }
@@ -6,26 +15,56 @@ body > #root > div {
   height: 100vh;
 }
 
-body { margin: 0px; }
+body {
+  font-family: 'Circular Std';
+  margin: 0px;
+  padding: 0;
+}
 
-@font-face {
-    font-family: 'Circular Std';
-    src: local('Circular Std Black'), local('Circular-Std-Black'),
-        url('fonts/CircularStd-Black.woff2') format('woff2'),
-        url('fonts/CircularStd-Black.woff') format('woff'),
-        url('fonts/CircularStd-Black.ttf') format('truetype');
-    font-style: normal;
-  }
 
 path,p {
   color: #C34A09;
 
 }
 
-.contenedor {
-  justify-content: flex-start;
-  display: flex;
+.content {
   height: 100%;
+  padding: 24px;
+  padding-top: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.main-title {
+  color: #670000;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.subtitle {
+  color: #C34A09;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.email-input {
+  height: 54px;
+}
+
+.form-control::placeholder {
+   color: #bdc3cb;
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+     sans-serif;
+   font-weight: 450;
+}
+
+.btn-submit {
+  height: 54px;
 }
 
 .bg-image {
@@ -38,16 +77,22 @@ path,p {
   position: relative;
 }
 
-.container-text {
-  margin-left:84px;
-  margin-top:245px;
-  max-width: 568px;
-  font-family: 'Circular Std';
+.thank-you-text {
+  color: #C34A09;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
 }
 
-.mango-text {
-  color: #670000;
-  font-size:84px;
+.more-info-text {
+  color: #953704;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 450;
+}
+
+.icons {
+  justify-content: center;
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
@@ -55,39 +100,28 @@ path,p {
     border-color: #FF6600 !important;
 }
 
-.col-xl-9, .col-sm-9 {
-  padding-left: 0px !important;
-}
-
-.mangoLogo{
-  bottom:-110px;
-  right:-100px;
-  position:fixed;
+.mango-logo{
+  bottom: 0;
+  right: 0;
+  position: fixed;
   transform-origin: bottom;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  height: 1261px;
+  height: auto;
+  z-index: 0;
 }
 
-.row {
-  margin-right: 0px !important;
-  margin-left: 0px !important;
+.mango-logo-sm {
+  bottom: -110px;
+  right: -50px;
+  height: 70%;
 }
 
-.box {
-    align-self: flex-end;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    background-color: #F44336;
-    height: 200px;
-    margin: 0 auto 0 auto;
-    transform-origin: bottom;
-    width: 200px;
-}
 .bounce {
-    animation-name: bounce-big;
-    animation-timing-function: ease;
+  animation-name: bounce-big;
+  animation-timing-function: ease;
 }
+
 @keyframes bounce-big {
     0%   { transform: scale(1,1)    translateY(0); }
     10%  { transform: scale(1.1,.9) translateY(0); }
@@ -104,45 +138,48 @@ path,p {
     100% { transform: scale(1,1)    translateY(0); }
 }
 
-@media only screen and (max-width: 740px) {
-  .container-text {
-    margin-left:24px;
-    margin-top:34px;
+@media only screen and (min-width: 576px) {
+  .content {
+    padding: 39px;
+  }
+
+  .email-wrapper {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  .email-container {
     max-width: 327px;
   }
-
-  .mango-text {
-    font-size:40px;
+  
+  .main-title {
+    font-size: 84px;
+    max-width: 700px;
   }
-
-  .mangoLogo {
-    height: auto;
-    bottom:-16px;
-    right:-15px;
-  }
-
-  .bounce {
-      animation-name: bounce-mobile;
+  
+  .icons {
+    justify-content: flex-start;
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .container-text {
-    margin:auto;
-    margin-top:34px;
+@media only screen and (min-width: 1280px) {
+  .content {
+    padding-left: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 0;
   }
-
-  .mango-text {
-    font-size:40px;
+  
+  .mango-logo-sm {
+    height: 920px;
+    right: -60px;
   }
+}
 
-  .btnSubmit{
-    margin-top: 6px;
-      width: 100%;
-  }
-
-  div {
-    align-content: center !important;
-    text-align: center !important;
+@media only screen and (min-width: 1600px) {
+  .mango-logo-sm {
+    height: 1100px;
+    right: -60px;
   }
 }
