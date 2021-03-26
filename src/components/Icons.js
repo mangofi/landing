@@ -21,7 +21,7 @@ const Icons = () => {
         </a>
       </span>
       <span className="social-icon">
-        <a href="https://mangofi.medium.com/">
+        <a href="https://mangofi.medium.com/" target="_blank">
           <FontAwesomeIcon icon={["fab", "medium"]} size="2x" />
         </a>
       </span>
