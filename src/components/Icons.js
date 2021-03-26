@@ -25,6 +25,11 @@ const Icons = () => {
           <FontAwesomeIcon icon={["fab", "medium"]} size="2x" />
         </a>
       </span>
+      <span className="social-icon">
+        <a href="https://www.bscscan.com/token/0xa09364704de72dc05d206ef86513280e96bc4196" target="_blank">
+          <img src="/img/bscscan_logo.svg" width={34} height={32}/>
+        </a>
+      </span>
     </div>
   );
 };
