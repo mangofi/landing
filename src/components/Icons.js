@@ -16,12 +16,12 @@ const Icons = () => {
         </a>
       </span>
       <span className="social-icon">
-        <a href="https://twitter.com/fi_mango" target="_blank">
+        <a href="https://twitter.com/mangofi_" target="_blank">
           <FontAwesomeIcon icon={["fab", "twitter"]} size="2x" />
         </a>
       </span>
       <span className="social-icon">
-        <a href="#">
+        <a href="https://mangofi.medium.com/">
           <FontAwesomeIcon icon={["fab", "medium"]} size="2x" />
         </a>
       </span>
