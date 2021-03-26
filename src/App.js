@@ -11,15 +11,22 @@ import Icons from "./components/Icons";
 import MangoLogo  from "./components/MangoLogo";
 
 import Api from "./lib/api";
+import {validateEmail} from "./lib/validations"
 
 const App = () => {
   const [loading, setLoading] = useState(false);
   const [registered, setRegistered] = useState(false);
+  const [validEmail, setValidEmail] = useState(false);
+  const [email, setEmail] = useState('');
   
   const onMailSubmit = async e => {
     e.preventDefault();
-    setLoading(true)
-    const email = document.getElementById("email").value;
+    
+    if (!validateEmail(email)) {
+      return
+    }
+
+    setLoading(true);
 
     await Api.emailSignup(email);
 
@@ -29,6 +36,11 @@ const App = () => {
       return false
     })
   };
+  
+  const onEmailChange = (text) => {
+    setEmail(text);
+    setValidEmail(validateEmail(text));
+  }
   
   const thankYouMessage = (
     <div className="mb-5">
@@ -55,13 +67,22 @@ const App = () => {
                 </div>
                 <div className="row email-wrapper no-gutters">
                   <div className="col email-container">
-                    <input className="form-control email-input" id="email" disabled={loading} type="email" placeholder="Enter email address" autoFocus={true} />
-                    <button className="btn btn-primary btn-block btn-submit px-3 d-sm-none" disabled={loading}>
+                    <input
+                      className={`form-control email-input ${!validEmail && email.trim().length > 0 ? 'is-invalid' : ''}`}
+                      id="email"
+                      disabled={loading}
+                      type="email"
+                      placeholder="Enter email address"
+                      autoFocus={true}
+                      onChange={(event) => { onEmailChange(event.target.value) }}
+                      value={email}
+                    />
+                    <button className="btn btn-primary btn-block btn-submit px-3 d-sm-none" disabled={loading || !validEmail}>
                       Notify me
                     </button>
                   </div>
                   <div className="col d-none d-sm-inline-block">
-                    <button className="btn btn-primary btn-submit px-5 ml-2" disabled={loading}>
+                    <button className="btn btn-primary btn-submit px-5 ml-2" disabled={loading || !validEmail}>
                       Notify me
                     </button>
                   </div>

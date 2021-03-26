@@ -107,9 +107,19 @@ path,p {
   margin-right: 24px;
 }
 
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #FF6600 !important;
-    border-color: #FF6600 !important;
+.btn-primary, .btn-primary:disabled {
+  background-color: #FF6600;
+  border-color: #FF6600;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: #FF8811;
+  border-color: #FF8811;
+}
+
+.btn-primary:hover:disabled {
+  background-color: #FF6600;
+  border-color: #FF6600;
 }
 
 .mango-logo{
