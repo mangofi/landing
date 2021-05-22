@@ -26,7 +26,7 @@ const Icons = () => {
         </a>
       </span>
       <span className="social-icon">
-        <a href="https://www.bscscan.com/token/0xa09364704de72dc05d206ef86513280e96bc4196" target="_blank">
+        <a href="https://bscscan.com/address/0x833aEeD69D1B14Db89ea49cAc93D5E55c6a16cB3" target="_blank">
           <img src="/img/bscscan_logo.svg" width={34} height={32}/>
         </a>
       </span>
